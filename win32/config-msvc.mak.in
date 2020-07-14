@@ -30,6 +30,24 @@ LIBINTL_LIB = intl.lib
 GLIB_MKENUMS=$(PREFIX)\bin\glib-mkenums
 !endif
 
+# Note: The PYTHON must be the Python release series that was used to build
+# the GObject-introspection scanner Python module, if building the introspection
+# files are desired!
+# Either having python.exe your PATH will work or passing in
+# PYTHON=<full path to your Python interpretor> will do.  If not building the
+# introspection files, any recent Python 2.7.x/3.x installation should do.
+!if "$(PYTHON)" == ""
+PYTHON=python
+!endif
+
+# PERL interpreter, required for running the legacy versions of glib-mkenum that is
+# written in PERL (i.e. LEGACY_GLIB_MKENUMS is used in the NMake command line).
+# Either having perl.exe in your PATH will work or passing in
+# PERL=<full path to your PERL interpreter> will do.
+!if "$(PERL)" == ""
+PERL=perl
+!endif
+
 LDFLAGS = $(LDFLAGS) /libpath:$(LIBDIR)
 
 # These are the base minimum libraries required for building amtk.
