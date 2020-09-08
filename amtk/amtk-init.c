@@ -35,7 +35,7 @@ get_locale_directory (void)
 
 	return locale_dir;
 #else
-	return g_build_filename (DATADIR, "locale", NULL);
+	return g_strdup (AMTK_LOCALEDIR);
 #endif
 }
 
