@@ -138,10 +138,10 @@ subdir('amtk')
 subdir('tests')
 subdir('testsuite')
 
-#if get_option('gtk_doc')
-#  subdir('docs/reference')
-#endif
+if get_option('gtk_doc')
+  subdir('docs/reference')
+endif
 
 summary('API version', AMTK_API_VERSION)
 summary('Prefix', get_option('prefix'))
-#summary('API documentation', get_option('gtk_doc'))
+summary('API documentation', get_option('gtk_doc'))

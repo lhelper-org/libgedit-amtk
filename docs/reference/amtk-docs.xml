@@ -8,8 +8,8 @@
 ]>
 <book id="index">
   <bookinfo>
-    <title>Amtk @AMTK_API_VERSION@ Reference Manual</title>
-    <releaseinfo>for Amtk &package_version;</releaseinfo>
+    <title>Amtk &package_api_version; Reference Manual</title>
+    <releaseinfo>for &package_string;</releaseinfo>
   </bookinfo>
 
   <xi:include href="amtk-intro.xml"/>
