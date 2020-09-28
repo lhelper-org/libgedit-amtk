@@ -6,7 +6,7 @@
 project(
   'amtk', 'c',
   meson_version: '>= 0.53',
-  version: '5.1.2',
+  version: '5.2.0',
   default_options: ['warning_level=2']
 )
 
