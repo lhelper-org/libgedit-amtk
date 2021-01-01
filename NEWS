@@ -1,3 +1,8 @@
+News in 5.3.1, 2021-xx-yy (not yet released)
+-------------------------
+* Build: port to Meson, remove Autotools.
+* Translation updates.
+
 News in 5.2.0, 2020-09-10
 -------------------------
 * Translation updates.
