@@ -144,4 +144,5 @@ endif
 
 summary('API version', AMTK_API_VERSION)
 summary('Prefix', get_option('prefix'))
+summary('GObject Introspection', get_option('gobject_introspection'))
 summary('API documentation', get_option('gtk_doc'))

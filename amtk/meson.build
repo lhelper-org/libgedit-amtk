@@ -103,21 +103,23 @@ PKG_CONFIG.generate(amtk_lib,
   libraries: AMTK_DEPS,
 )
 
-GNOME.generate_gir(
-  amtk_lib,
-  export_packages: 'amtk-@0@'.format(AMTK_API_VERSION),
-  header: 'amtk/amtk.h',
-  identifier_prefix: 'Amtk',
-  include_directories: ROOT_INCLUDE_DIR,
-  includes: ['Gtk-3.0'],
-  install: true,
-  namespace: 'Amtk',
-  nsversion: AMTK_API_VERSION,
-  sources: [
-    amtk_public_headers,
-    amtk_public_c_files,
-    amtk_enum_types
-  ],
-  # Support for deps being built as subprojects:
-  dependencies: AMTK_DEPS,
-)
+if get_option('gobject_introspection')
+  GNOME.generate_gir(
+    amtk_lib,
+    export_packages: 'amtk-@0@'.format(AMTK_API_VERSION),
+    header: 'amtk/amtk.h',
+    identifier_prefix: 'Amtk',
+    include_directories: ROOT_INCLUDE_DIR,
+    includes: ['Gtk-3.0'],
+    install: true,
+    namespace: 'Amtk',
+    nsversion: AMTK_API_VERSION,
+    sources: [
+      amtk_public_headers,
+      amtk_public_c_files,
+      amtk_enum_types
+    ],
+    # Support for deps being built as subprojects:
+    dependencies: AMTK_DEPS,
+  )
+endif
