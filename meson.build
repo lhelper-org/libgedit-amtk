@@ -46,7 +46,7 @@ AMTK_DEPS = [
   dependency('gtk+-3.0', version: '>= 3.22')
 ]
 
-# config.h
+# amtk-config.h
 
 config_data = configuration_data()
 GETTEXT_PACKAGE_NAME = 'amtk-' + AMTK_API_VERSION
@@ -54,7 +54,7 @@ config_data.set_quoted('GETTEXT_PACKAGE', GETTEXT_PACKAGE_NAME)
 config_data.set_quoted('AMTK_LOCALEDIR', get_option('prefix') / get_option('localedir'))
 
 configure_file(
-  output: 'config.h',
+  output: 'amtk-config.h',
   configuration: config_data
 )
 

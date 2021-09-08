@@ -17,7 +17,7 @@
  * along with this library; if not, see <http://www.gnu.org/licenses/>.
  */
 
-#include "config.h"
+#include "amtk-config.h"
 #include "amtk-init.h"
 #include <glib/gi18n-lib.h>
 #include "amtk-action-info-central-store.h"
