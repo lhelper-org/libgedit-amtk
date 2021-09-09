@@ -54,7 +54,7 @@ struct _AmtkApplicationWindowClass
 };
 
 _AMTK_EXTERN
-GType			amtk_application_window_get_type			(void) G_GNUC_CONST;
+GType			amtk_application_window_get_type			(void);
 
 _AMTK_EXTERN
 AmtkApplicationWindow *	amtk_application_window_get_from_gtk_application_window	(GtkApplicationWindow *gtk_window);

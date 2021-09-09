@@ -63,7 +63,7 @@ struct _AmtkActionInfoEntry
 };
 
 _AMTK_EXTERN
-GType			amtk_action_info_get_type		(void) G_GNUC_CONST;
+GType			amtk_action_info_get_type		(void);
 
 _AMTK_EXTERN
 AmtkActionInfo *	amtk_action_info_new			(void);

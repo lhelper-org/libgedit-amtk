@@ -62,7 +62,7 @@ struct _AmtkMenuShellClass
 };
 
 _AMTK_EXTERN
-GType		amtk_menu_shell_get_type		(void) G_GNUC_CONST;
+GType		amtk_menu_shell_get_type		(void);
 
 _AMTK_EXTERN
 AmtkMenuShell *	amtk_menu_shell_get_from_gtk_menu_shell	(GtkMenuShell *gtk_menu_shell);

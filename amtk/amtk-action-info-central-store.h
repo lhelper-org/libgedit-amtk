@@ -54,7 +54,7 @@ struct _AmtkActionInfoCentralStoreClass
 };
 
 _AMTK_EXTERN
-GType		amtk_action_info_central_store_get_type		(void) G_GNUC_CONST;
+GType		amtk_action_info_central_store_get_type		(void);
 
 _AMTK_EXTERN
 AmtkActionInfoCentralStore *
