@@ -28,7 +28,6 @@
 
 G_BEGIN_DECLS
 
-typedef struct _AmtkActionInfoCentralStore	AmtkActionInfoCentralStore;
 typedef struct _AmtkApplicationWindow		AmtkApplicationWindow;
 typedef struct _AmtkFactory			AmtkFactory;
 typedef struct _AmtkMenuShell			AmtkMenuShell;
