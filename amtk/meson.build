@@ -48,7 +48,7 @@ amtk_static_lib = static_library(
   'amtk-static',
   [amtk_public_c_files,
    amtk_enum_types],
-  pic: true, # amtk_static_lib is linked in a shared library.
+  pic: true, # amtk_static_lib is potentially linked in a shared library.
   include_directories: ROOT_INCLUDE_DIR,
   dependencies: AMTK_DEPS,
   c_args: '-DAMTK_COMPILATION'
