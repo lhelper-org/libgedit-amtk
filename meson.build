@@ -135,7 +135,7 @@ add_project_arguments(supported_warning_cflags, language: 'c')
 
 subdir('po')
 subdir('amtk')
-subdir('tests')
+subdir('tests/interactive-tests')
 subdir('unit-tests')
 
 if get_option('gtk_doc')
