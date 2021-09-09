@@ -25,6 +25,7 @@
 #endif
 
 #include <glib-object.h>
+#include <amtk/amtk-action-info.h>
 #include <amtk/amtk-types.h>
 
 G_BEGIN_DECLS

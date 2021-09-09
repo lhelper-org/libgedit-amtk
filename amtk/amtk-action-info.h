@@ -31,6 +31,8 @@ G_BEGIN_DECLS
 
 #define AMTK_TYPE_ACTION_INFO (amtk_action_info_get_type ())
 
+typedef struct _AmtkActionInfo AmtkActionInfo;
+
 /**
  * AmtkActionInfoEntry:
  * @action_name: the action name. Can be a detailed action name, see
