@@ -26,7 +26,6 @@
 
 #include <glib-object.h>
 #include <amtk/amtk-action-info.h>
-#include <amtk/amtk-macros.h>
 
 G_BEGIN_DECLS
 

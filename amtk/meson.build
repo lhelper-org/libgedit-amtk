@@ -8,7 +8,6 @@ amtk_public_headers = [
   'amtk-factory.h',
   'amtk-gmenu.h',
   'amtk-init.h',
-  'amtk-macros.h',
   'amtk-menu-item.h',
   'amtk-menu-shell.h',
   'amtk-shortcuts.h',

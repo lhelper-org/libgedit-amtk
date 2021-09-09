@@ -25,7 +25,7 @@
 #endif
 
 #include <glib-object.h>
-#include <amtk/amtk-macros.h>
+#include <gmodule.h>
 
 G_BEGIN_DECLS
 

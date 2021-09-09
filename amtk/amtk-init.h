@@ -24,8 +24,7 @@
 #error "Only <amtk/amtk.h> can be included directly."
 #endif
 
-#include <glib.h>
-#include <amtk/amtk-macros.h>
+#include <gmodule.h>
 
 G_BEGIN_DECLS
 
