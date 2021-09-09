@@ -180,8 +180,8 @@
  *
  * # Modern UI with a GtkHeaderBar
  *
- * To have an example code, see `tests/test-headerbar.c` in the git repository
- * of Amtk.
+ * To have an example code, see `tests/interactive-tests/test-headerbar.c` in
+ * the git repository of Amtk.
  */
 
 struct _AmtkFactoryPrivate
