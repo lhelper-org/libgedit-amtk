@@ -29,7 +29,7 @@
 
 G_BEGIN_DECLS
 
-_AMTK_EXTERN
+G_MODULE_EXPORT
 void	amtk_action_map_add_action_entries_check_dups	(GActionMap         *action_map,
 							 const GActionEntry *entries,
 							 gint                n_entries,

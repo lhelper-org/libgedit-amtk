@@ -55,14 +55,14 @@ struct _AmtkActionInfoCentralStoreClass
 	gpointer padding[12];
 };
 
-_AMTK_EXTERN
+G_MODULE_EXPORT
 GType		amtk_action_info_central_store_get_type		(void);
 
-_AMTK_EXTERN
+G_MODULE_EXPORT
 AmtkActionInfoCentralStore *
 		amtk_action_info_central_store_get_singleton	(void);
 
-_AMTK_EXTERN
+G_MODULE_EXPORT
 AmtkActionInfo *amtk_action_info_central_store_lookup		(AmtkActionInfoCentralStore *central_store,
 								 const gchar                *action_name);
 

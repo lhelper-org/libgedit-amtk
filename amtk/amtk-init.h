@@ -29,10 +29,10 @@
 
 G_BEGIN_DECLS
 
-_AMTK_EXTERN
+G_MODULE_EXPORT
 void	amtk_init		(void);
 
-_AMTK_EXTERN
+G_MODULE_EXPORT
 void	amtk_finalize		(void);
 
 G_END_DECLS

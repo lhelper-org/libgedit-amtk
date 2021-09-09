@@ -38,18 +38,14 @@ install_headers(
 
 amtk_enum_types = GNOME.mkenums_simple(
   'amtk-enum-types',
-  decorator: '_AMTK_EXTERN',
-  header_prefix: '#include <amtk/amtk-macros.h>',
+  decorator: 'G_MODULE_EXPORT',
+  header_prefix: '#include <gmodule.h>',
   sources: amtk_public_headers,
   install_header: true,
   install_dir: headers_install_dir
 )
 
 amtk_static_lib_c_args = [ '-DAMTK_COMPILATION' ]
-if meson.get_compiler('c').get_argument_syntax() == 'msvc'
-  amtk_static_lib_c_args += '-D_AMTK_EXTERN=__declspec(dllexport) extern'
-endif
-
 amtk_static_lib = static_library(
   'amtk-static',
   [amtk_public_c_files,

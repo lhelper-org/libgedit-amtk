@@ -29,13 +29,13 @@
 
 G_BEGIN_DECLS
 
-_AMTK_EXTERN
+G_MODULE_EXPORT
 GtkShortcutsWindow *	amtk_shortcuts_window_new	(GtkWindow *parent);
 
-_AMTK_EXTERN
+G_MODULE_EXPORT
 GtkContainer *		amtk_shortcuts_section_new	(const gchar *title);
 
-_AMTK_EXTERN
+G_MODULE_EXPORT
 GtkContainer *		amtk_shortcuts_group_new	(const gchar *title);
 
 G_END_DECLS

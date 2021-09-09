@@ -55,31 +55,31 @@ struct _AmtkActionInfoStoreClass
 	gpointer padding[12];
 };
 
-_AMTK_EXTERN
+G_MODULE_EXPORT
 GType			amtk_action_info_store_get_type			(void);
 
-_AMTK_EXTERN
+G_MODULE_EXPORT
 AmtkActionInfoStore *	amtk_action_info_store_new			(void);
 
-_AMTK_EXTERN
+G_MODULE_EXPORT
 void			amtk_action_info_store_add			(AmtkActionInfoStore *store,
 									 AmtkActionInfo      *info);
 
-_AMTK_EXTERN
+G_MODULE_EXPORT
 void			amtk_action_info_store_add_entries		(AmtkActionInfoStore       *store,
 									 const AmtkActionInfoEntry *entries,
 									 gint                       n_entries,
 									 const gchar               *translation_domain);
 
-_AMTK_EXTERN
+G_MODULE_EXPORT
 AmtkActionInfo *	amtk_action_info_store_lookup			(AmtkActionInfoStore *store,
 									 const gchar         *action_name);
 
-_AMTK_EXTERN
+G_MODULE_EXPORT
 void			amtk_action_info_store_set_all_accels_to_app	(AmtkActionInfoStore *store,
 									 GtkApplication      *application);
 
-_AMTK_EXTERN
+G_MODULE_EXPORT
 void			amtk_action_info_store_check_all_used		(AmtkActionInfoStore *store);
 
 G_END_DECLS

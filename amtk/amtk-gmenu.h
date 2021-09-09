@@ -29,11 +29,11 @@
 
 G_BEGIN_DECLS
 
-_AMTK_EXTERN
+G_MODULE_EXPORT
 void	amtk_gmenu_append_item		(GMenu     *menu,
 					 GMenuItem *item);
 
-_AMTK_EXTERN
+G_MODULE_EXPORT
 void	amtk_gmenu_append_section	(GMenu       *menu,
 					 const gchar *label,
 					 GMenu       *section);

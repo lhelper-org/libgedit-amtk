@@ -24,14 +24,6 @@
 #error "Only <amtk/amtk.h> can be included directly."
 #endif
 
-#include <glib.h>
-
-G_BEGIN_DECLS
-
-#ifndef _AMTK_EXTERN
-#define _AMTK_EXTERN extern
-#endif
-
-G_END_DECLS
+#include <gmodule.h>
 
 #endif /* AMTK_MACROS_H */
