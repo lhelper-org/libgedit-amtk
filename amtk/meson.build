@@ -44,7 +44,6 @@ amtk_enum_types = GNOME.mkenums_simple(
   install_dir: headers_install_dir
 )
 
-amtk_static_lib_c_args = [ '-DAMTK_COMPILATION' ]
 amtk_static_lib = static_library(
   'amtk-static',
   [amtk_public_c_files,
@@ -52,7 +51,7 @@ amtk_static_lib = static_library(
   pic: true, # amtk_static_lib is linked in a shared library.
   include_directories: ROOT_INCLUDE_DIR,
   dependencies: AMTK_DEPS,
-  c_args: amtk_static_lib_c_args
+  c_args: '-DAMTK_COMPILATION'
 )
 
 # For unit tests, to be able to test private functions.
