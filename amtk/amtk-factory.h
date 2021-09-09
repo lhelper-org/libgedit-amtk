@@ -37,6 +37,7 @@ G_BEGIN_DECLS
 #define AMTK_IS_FACTORY_CLASS(klass)  (G_TYPE_CHECK_CLASS_TYPE ((klass), AMTK_TYPE_FACTORY))
 #define AMTK_FACTORY_GET_CLASS(obj)   (G_TYPE_INSTANCE_GET_CLASS ((obj), AMTK_TYPE_FACTORY, AmtkFactoryClass))
 
+typedef struct _AmtkFactory         AmtkFactory;
 typedef struct _AmtkFactoryClass    AmtkFactoryClass;
 typedef struct _AmtkFactoryPrivate  AmtkFactoryPrivate;
 
