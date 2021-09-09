@@ -17,8 +17,8 @@
  * along with this library; if not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef AMTK_TYPES_H
-#define AMTK_TYPES_H
+#ifndef AMTK_MACROS_H
+#define AMTK_MACROS_H
 
 #if !defined (AMTK_H_INSIDE) && !defined (AMTK_COMPILATION)
 #error "Only <amtk/amtk.h> can be included directly."
@@ -34,4 +34,4 @@ G_BEGIN_DECLS
 
 G_END_DECLS
 
-#endif /* AMTK_TYPES_H */
+#endif /* AMTK_MACROS_H */

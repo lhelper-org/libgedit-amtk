@@ -8,10 +8,10 @@ amtk_public_headers = [
   'amtk-factory.h',
   'amtk-gmenu.h',
   'amtk-init.h',
+  'amtk-macros.h',
   'amtk-menu-item.h',
   'amtk-menu-shell.h',
   'amtk-shortcuts.h',
-  'amtk-types.h',
   'amtk-utils.h',
 ]
 
@@ -39,7 +39,7 @@ install_headers(
 amtk_enum_types = GNOME.mkenums_simple(
   'amtk-enum-types',
   decorator: '_AMTK_EXTERN',
-  header_prefix: '#include <amtk/amtk-types.h>',
+  header_prefix: '#include <amtk/amtk-macros.h>',
   sources: amtk_public_headers,
   install_header: true,
   install_dir: headers_install_dir

@@ -25,7 +25,7 @@
 #endif
 
 #include <gio/gio.h>
-#include <amtk/amtk-types.h>
+#include <amtk/amtk-macros.h>
 
 G_BEGIN_DECLS
 
