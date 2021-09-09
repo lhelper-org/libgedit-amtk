@@ -20,7 +20,6 @@
 #include "amtk-config.h"
 #include "amtk-action-info.h"
 #include <glib/gi18n-lib.h>
-#include "amtk-utils.h"
 
 /**
  * SECTION:amtk-action-info
