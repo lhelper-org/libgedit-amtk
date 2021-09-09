@@ -36,6 +36,7 @@ G_BEGIN_DECLS
 #define AMTK_IS_APPLICATION_WINDOW_CLASS(klass)  (G_TYPE_CHECK_CLASS_TYPE ((klass), AMTK_TYPE_APPLICATION_WINDOW))
 #define AMTK_APPLICATION_WINDOW_GET_CLASS(obj)   (G_TYPE_INSTANCE_GET_CLASS ((obj), AMTK_TYPE_APPLICATION_WINDOW, AmtkApplicationWindowClass))
 
+typedef struct _AmtkApplicationWindow         AmtkApplicationWindow;
 typedef struct _AmtkApplicationWindowClass    AmtkApplicationWindowClass;
 typedef struct _AmtkApplicationWindowPrivate  AmtkApplicationWindowPrivate;
 
