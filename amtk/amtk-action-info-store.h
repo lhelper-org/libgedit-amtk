@@ -37,6 +37,7 @@ G_BEGIN_DECLS
 #define AMTK_IS_ACTION_INFO_STORE_CLASS(klass)  (G_TYPE_CHECK_CLASS_TYPE ((klass), AMTK_TYPE_ACTION_INFO_STORE))
 #define AMTK_ACTION_INFO_STORE_GET_CLASS(obj)   (G_TYPE_INSTANCE_GET_CLASS ((obj), AMTK_TYPE_ACTION_INFO_STORE, AmtkActionInfoStoreClass))
 
+typedef struct _AmtkActionInfoStore         AmtkActionInfoStore;
 typedef struct _AmtkActionInfoStoreClass    AmtkActionInfoStoreClass;
 typedef struct _AmtkActionInfoStorePrivate  AmtkActionInfoStorePrivate;
 
