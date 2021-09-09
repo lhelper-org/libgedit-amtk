@@ -28,8 +28,6 @@
 
 G_BEGIN_DECLS
 
-typedef struct _AmtkMenuShell AmtkMenuShell;
-
 #ifndef _AMTK_EXTERN
 #define _AMTK_EXTERN extern
 #endif

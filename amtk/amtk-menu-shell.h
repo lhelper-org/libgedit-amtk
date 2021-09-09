@@ -36,6 +36,7 @@ G_BEGIN_DECLS
 #define AMTK_IS_MENU_SHELL_CLASS(klass)  (G_TYPE_CHECK_CLASS_TYPE ((klass), AMTK_TYPE_MENU_SHELL))
 #define AMTK_MENU_SHELL_GET_CLASS(obj)   (G_TYPE_INSTANCE_GET_CLASS ((obj), AMTK_TYPE_MENU_SHELL, AmtkMenuShellClass))
 
+typedef struct _AmtkMenuShell         AmtkMenuShell;
 typedef struct _AmtkMenuShellClass    AmtkMenuShellClass;
 typedef struct _AmtkMenuShellPrivate  AmtkMenuShellPrivate;
 
