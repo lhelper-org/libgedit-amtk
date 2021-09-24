@@ -1,3 +1,11 @@
+News in 5.x.y (not yet released)
+-------------
+* Some files reorganization within the git repository.
+* Update the README.md file, etc.
+* Some code refactorings, it's now easier to copy part of the code (e.g., just
+  one class) to another project.
+* Mark public API with G_MODULE_EXPORT, not the custom _AMTK_EXTERN macro.
+
 News in 5.3.1, 2021-01-11
 -------------------------
 * Build: port to Meson, remove Autotools.
