@@ -1,6 +1,4 @@
 /*
- * This file is part of Amtk - Actions, Menus and Toolbars Kit
- *
  * Copyright 2016, 2017 - Sébastien Wilmet <swilmet@gnome.org>
  * SPDX-License-Identifier: LGPL-3.0-or-later
  */
