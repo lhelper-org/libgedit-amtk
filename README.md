@@ -30,8 +30,7 @@ Documentation
 See the `gtk_doc` Meson option. A convenient way to read the API documentation
 is with the [Devhelp](https://wiki.gnome.org/Apps/Devhelp) application.
 
-Contributions
--------------
+How to contribute
+-----------------
 
-Contributions are no longer accepted for this project. See the `HACKING` file
-for more information.
+See the file `HACKING`.
