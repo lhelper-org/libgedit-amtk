@@ -1,8 +1,6 @@
 Amtk - Actions, Menus and Toolbars Kit for GTK applications
 ===========================================================
 
-This is version 5.3.1 of Amtk.
-
 Amtk is the acronym for “Actions, Menus and Toolbars Kit”. It is a basic
 GtkUIManager replacement based on GAction. It is suitable for both a
 traditional UI or a modern UI with a GtkHeaderBar.
