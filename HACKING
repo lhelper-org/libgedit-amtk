@@ -1,12 +1,4 @@
-How to contribute to Amtk
-=========================
+Amtk development
+================
 
-Amtk follows the same guidelines and code conventions as GtkSourceView:
-
-    https://gitlab.gnome.org/GNOME/gtksourceview/blob/master/HACKING
-
-The Amtk GitLab:
-
-    https://gitlab.gnome.org/GNOME/amtk
-
-See also the amtk/NOTES file.
+There are some notes in the [amtk/NOTES](amtk/NOTES) file.
