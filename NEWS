@@ -5,6 +5,7 @@ News in 5.x.y (not yet released)
 * Some code refactorings, it's now easier to copy part of the code (e.g., just
   one class) to another project.
 * Mark public API with G_MODULE_EXPORT, not the custom _AMTK_EXTERN macro.
+* REUSE way of applying licenses, and update license from LGPLv2.1+ to LGPLv3+.
 
 News in 5.3.1, 2021-01-11
 -------------------------
