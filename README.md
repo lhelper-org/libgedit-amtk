@@ -21,6 +21,8 @@ Documentation
 See the `gtk_doc` Meson option. A convenient way to read the API documentation
 is with the [Devhelp](https://wiki.gnome.org/Apps/Devhelp) application.
 
+See also the `docs/` directory for additional notes.
+
 Development and maintenance
 ---------------------------
 
