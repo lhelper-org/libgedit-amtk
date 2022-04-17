@@ -1,5 +1,5 @@
-News in 5.x.y (not yet released)
--------------
+News in 5.x.y, 2022-xx-yy (not yet released)
+-------------------------
 * Some files reorganization within the git repository.
 * Update the README.md file, etc.
 * Some code refactorings, it's now easier to copy part of the code (e.g., just
