@@ -1,11 +1,13 @@
-News in 5.x.y, 2022-xx-yy (not yet released)
+News in 5.3.2, 2022-04-18
 -------------------------
+* The project is now hosted here: https://gitlab.gnome.org/swilmet/amtk
 * Some files reorganization within the git repository.
 * Update the README.md file, etc.
 * Some code refactorings, it's now easier to copy part of the code (e.g., just
   one class) to another project.
 * Mark public API with G_MODULE_EXPORT, not the custom _AMTK_EXTERN macro.
 * REUSE way of applying licenses, and update license from LGPLv2.1+ to LGPLv3+.
+* Translation updates.
 
 News in 5.3.1, 2021-01-11
 -------------------------
