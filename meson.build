@@ -6,7 +6,7 @@
 project(
   'amtk', 'c',
   meson_version: '>= 0.53',
-  version: '5.3.3',
+  version: '5.4.0',
   default_options: ['warning_level=2']
 )
 
@@ -34,7 +34,7 @@ I18N = import('i18n')
 # When incrementing the API version (usually for a new major package version),
 # set CURRENT, REVISION and AGE to 0 since it's like a new library.
 lt_current = 0
-lt_revision = 0
+lt_revision = 1
 lt_age = 0
 AMTK_LT_VERSION = '@0@.@1@.@2@'.format(lt_current, lt_revision, lt_age)
 
