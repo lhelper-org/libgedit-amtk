@@ -13,6 +13,7 @@
   </bookinfo>
 
   <xi:include href="amtk-intro.xml"/>
+  <xi:include href="gradual-porting.xml"/>
 
   <part id="api-reference">
     <title>Amtk API Reference</title>

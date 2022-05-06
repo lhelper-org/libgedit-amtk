@@ -30,6 +30,7 @@ GNOME.gtkdoc(
   ],
   content_files: [
     'amtk-intro.xml',
+    'gradual-porting.xml',
   ],
   install: true
 )
