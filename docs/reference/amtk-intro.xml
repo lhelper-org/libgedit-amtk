@@ -30,14 +30,20 @@
   <link linkend="GtkToolbar">GtkToolbar</link> and a
   <link linkend="GtkStatusbar">GtkStatusbar</link>). Amtk is now suitable for
   both a traditional UI and for a new UI with a
-  <link linkend="GtkHeaderBar">GtkHeaderBar</link> and a “hamburger menu”.
+  <link linkend="GtkHeaderBar">GtkHeaderBar</link> and a “sandwich menu”.
 </para>
 
 <para>
   With Amtk, menus, toolbars or other objects like
   <link linkend="GtkShortcutsWindow">GtkShortcutsWindow</link> are created
   programmatically (not with a *.ui file), but with convenient APIs. The support
-  for an XML format will maybe be added in the future, contributions welcome.
+  for an XML format will maybe be added in the future.
+</para>
+
+<para>
+  Note that the heavy-lifting is still done by GTK of course (and GIO for
+  <link linkend="GAction">GAction</link>), this library is just a small layer on
+  top, providing an alternative way of doing things.
 </para>
 
 <refsect1>
