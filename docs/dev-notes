@@ -1,8 +1,5 @@
-Amtk notes
-==========
-
-Possible things to do
----------------------
+Amtk notes - possible things to do or to investigate
+====================================================
 
 - When calling amtk_menu_item_set_icon_name(), do not have a large margin on
   the left. GtkUIManager was able to put the icon without the large margin (in
