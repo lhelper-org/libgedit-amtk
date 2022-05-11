@@ -31,6 +31,7 @@ Development resources
 Development and maintenance
 ---------------------------
 
-If you want to see Amtk improved, you are encouraged to contribute. The maintainer will do
-its best at reviewing merge requests. However, contributions need to follow the roadmap of
-Amtk or the general philosophy of the project. Any help will be welcomed!
+If you want to see Amtk improved, you are encouraged to contribute. The
+maintainer will do its best at reviewing merge requests. However, contributions
+need to follow the roadmap of Amtk or the general philosophy of the project. Any
+help will be welcomed!
