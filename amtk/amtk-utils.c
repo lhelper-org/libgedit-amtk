@@ -1,4 +1,4 @@
-/* SPDX-FileCopyrightText: 2017 - Sébastien Wilmet <swilmet@gnome.org>
+/* SPDX-FileCopyrightText: 2017-2022 - Sébastien Wilmet <swilmet@gnome.org>
  * SPDX-License-Identifier: LGPL-3.0-or-later
  */
 
@@ -15,6 +15,80 @@
  * Utility functions.
  */
 
+static gchar *
+get_home_dir_without_trailing_slash (const gchar *home_dir)
+{
+	gchar *utf8_home_dir;
+	gsize length;
+
+	if (home_dir == NULL)
+	{
+		return NULL;
+	}
+
+	utf8_home_dir = g_filename_to_utf8 (home_dir, -1, NULL, NULL, NULL);
+	if (utf8_home_dir == NULL)
+	{
+		return NULL;
+	}
+
+	length = strlen (utf8_home_dir);
+	if (length == 0)
+	{
+		g_free (utf8_home_dir);
+		return NULL;
+	}
+
+	if (utf8_home_dir[length - 1] == '/')
+	{
+		utf8_home_dir[length - 1] = '\0';
+	}
+
+	return utf8_home_dir;
+}
+
+/* Like tepl_utils_replace_home_dir_with_tilde() but with an additional home_dir
+ * parameter, for unit tests.
+ */
+static gchar *
+_tepl_utils_replace_home_dir_with_tilde_with_param (const gchar *filename,
+						    const gchar *home_dir)
+{
+	gchar *home_dir_without_trailing_slash;
+	gchar *home_dir_with_trailing_slash;
+	gchar *ret;
+
+	g_return_val_if_fail (filename != NULL, NULL);
+
+	home_dir_without_trailing_slash = get_home_dir_without_trailing_slash (home_dir);
+	if (home_dir_without_trailing_slash == NULL)
+	{
+		return g_strdup (filename);
+	}
+
+	home_dir_with_trailing_slash = g_strdup_printf ("%s/", home_dir_without_trailing_slash);
+
+	if (g_str_equal (filename, home_dir_without_trailing_slash) ||
+	    g_str_equal (filename, home_dir_with_trailing_slash))
+	{
+		ret = g_strdup ("~");
+		goto out;
+	}
+
+	if (g_str_has_prefix (filename, home_dir_with_trailing_slash))
+	{
+		ret = g_strdup_printf ("~/%s", filename + strlen (home_dir_with_trailing_slash));
+		goto out;
+	}
+
+	ret = g_strdup (filename);
+
+out:
+	g_free (home_dir_without_trailing_slash);
+	g_free (home_dir_with_trailing_slash);
+	return ret;
+}
+
 /*
  * _amtk_utils_replace_home_dir_with_tilde:
  * @filename: the filename.
@@ -28,44 +102,7 @@
 gchar *
 _amtk_utils_replace_home_dir_with_tilde (const gchar *filename)
 {
-	gchar *tmp;
-	gchar *home;
-
-	g_return_val_if_fail (filename != NULL, NULL);
-
-	/* Note that g_get_home_dir returns a const string */
-	tmp = (gchar *) g_get_home_dir ();
-
-	if (tmp == NULL)
-	{
-		return g_strdup (filename);
-	}
-
-	home = g_filename_to_utf8 (tmp, -1, NULL, NULL, NULL);
-	if (home == NULL)
-	{
-		return g_strdup (filename);
-	}
-
-	if (g_str_equal (filename, home))
-	{
-		g_free (home);
-		return g_strdup ("~");
-	}
-
-	tmp = home;
-	home = g_strdup_printf ("%s/", tmp);
-	g_free (tmp);
-
-	if (g_str_has_prefix (filename, home))
-	{
-		gchar *res = g_strdup_printf ("~/%s", filename + strlen (home));
-		g_free (home);
-		return res;
-	}
-
-	g_free (home);
-	return g_strdup (filename);
+	return _tepl_utils_replace_home_dir_with_tilde_with_param (filename, g_get_home_dir ());
 }
 
 /**
