@@ -43,6 +43,9 @@ void		amtk_utils_create_gtk_action			(GActionMap     *g_action_map,
 								 const gchar    *gtk_action_name);
 G_GNUC_END_IGNORE_DEPRECATIONS
 
+G_MODULE_EXPORT
+GtkWidget *	amtk_utils_get_shrinkable_menubar		(GtkMenuBar *menubar);
+
 G_END_DECLS
 
 #endif /* AMTK_UTILS_H */

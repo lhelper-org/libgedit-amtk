@@ -465,3 +465,42 @@ amtk_utils_create_gtk_action (GActionMap     *g_action_map,
 						gtk_action_name);
 }
 G_GNUC_END_IGNORE_DEPRECATIONS
+
+/**
+ * amtk_utils_get_shrinkable_menubar:
+ * @menubar: a #GtkMenuBar.
+ *
+ * This function wraps @menubar into a container, to allow the menubar to shrink
+ * below its minimum width.
+ *
+ * A possible use-case: have two applications side-by-side on a single screen.
+ *
+ * Returns: (transfer floating): a new widget that contains @menubar.
+ * Since: 5.6
+ */
+GtkWidget *
+amtk_utils_get_shrinkable_menubar (GtkMenuBar *menubar)
+{
+	GtkWidget *viewport;
+	GtkWidget *hpaned;
+
+	/* Note, this solution might work with other kinds of widgets than a
+	 * GtkMenuBar. But it would require more testing. If a more general
+	 * solution is desirable, another function can be added.
+	 */
+
+	g_return_val_if_fail (GTK_IS_MENU_BAR (menubar), NULL);
+
+	viewport = gtk_viewport_new (NULL, NULL);
+	gtk_widget_show (viewport);
+	gtk_viewport_set_shadow_type (GTK_VIEWPORT (viewport), GTK_SHADOW_NONE);
+
+	hpaned = gtk_paned_new (GTK_ORIENTATION_HORIZONTAL);
+	gtk_widget_show (hpaned);
+
+	/* Packing */
+	gtk_container_add (GTK_CONTAINER (viewport), GTK_WIDGET (menubar));
+	gtk_paned_add1 (GTK_PANED (hpaned), viewport);
+
+	return hpaned;
+}
