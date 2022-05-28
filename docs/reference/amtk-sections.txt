@@ -181,4 +181,5 @@ amtk_utils_remove_mnemonic
 amtk_utils_recent_chooser_menu_get_item_uri
 amtk_utils_bind_g_action_to_gtk_action
 amtk_utils_create_gtk_action
+amtk_utils_get_shrinkable_menubar
 </SECTION>
