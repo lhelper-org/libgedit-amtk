@@ -10,9 +10,9 @@
 Toolbars Kit”. It is a basic GtkUIManager replacement based on GAction. It is
 suitable for both a traditional UI or a modern UI with a GtkHeaderBar.</description>
 
-  <homepage rdf:resource="https://gitlab.gnome.org/swilmet/amtk/" />
+  <homepage rdf:resource="https://gitlab.gnome.org/World/amtk" />
   <download-page rdf:resource="https://download.gnome.org/sources/amtk/" />
-  <bug-database rdf:resource="https://gitlab.gnome.org/swilmet/amtk/-/issues" />
+  <bug-database rdf:resource="https://gitlab.gnome.org/World/amtk/-/issues" />
 
   <programming-language>C</programming-language>
 
