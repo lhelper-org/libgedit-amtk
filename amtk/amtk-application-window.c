@@ -521,6 +521,40 @@ amtk_application_window_connect_recent_chooser_menu_to_statusbar (AmtkApplicatio
 	amtk_application_window_connect_menu_to_statusbar (amtk_window, GTK_MENU_SHELL (menu));
 }
 
+/**
+ * amtk_application_window_create_open_recent_menu_base:
+ *
+ * Creates the base of a simple and generic #GtkRecentChooserMenu.
+ *
+ * The #GtkRecentChooser is configured to show files only recently used with the
+ * current application, as returned by g_get_application_name(). If recent files
+ * are added to the default #GtkRecentManager with
+ * gtk_recent_manager_add_item(), the files will normally show up in the
+ * #GtkRecentChooserMenu.
+ *
+ * Returns: (transfer floating): a new #GtkRecentChooserMenu.
+ * Since: 5.6
+ */
+GtkRecentChooserMenu *
+amtk_application_window_create_open_recent_menu_base (void)
+{
+	GtkRecentChooserMenu *recent_chooser_menu;
+	GtkRecentChooser *recent_chooser;
+	GtkRecentFilter *filter;
+
+	recent_chooser_menu = GTK_RECENT_CHOOSER_MENU (gtk_recent_chooser_menu_new ());
+
+	recent_chooser = GTK_RECENT_CHOOSER (recent_chooser_menu);
+	gtk_recent_chooser_set_local_only (recent_chooser, FALSE);
+	gtk_recent_chooser_set_sort_type (recent_chooser, GTK_RECENT_SORT_MRU);
+
+	filter = gtk_recent_filter_new ();
+	gtk_recent_filter_add_application (filter, g_get_application_name ());
+	gtk_recent_chooser_set_filter (recent_chooser, filter);
+
+	return recent_chooser_menu;
+}
+
 static void
 open_recent_file_cb (GtkRecentChooser *recent_chooser,
 		     gpointer          user_data)
@@ -544,20 +578,16 @@ open_recent_file_cb (GtkRecentChooser *recent_chooser,
  * amtk_application_window_create_open_recent_menu:
  * @amtk_window: an #AmtkApplicationWindow.
  *
- * Creates a simple and generic #GtkRecentChooserMenu.
+ * This function creates a #GtkRecentChooserMenu with
+ * amtk_application_window_create_open_recent_menu_base(), and setup these
+ * additional things:
  *
- * The #GtkRecentChooser is configured to show files only recently used with the
- * current application, as returned by g_get_application_name(). If recent files
- * are added to the default #GtkRecentManager with
- * gtk_recent_manager_add_item(), the files will normally show up in the
- * #GtkRecentChooserMenu.
+ * - The #GtkRecentChooserMenu is connected to the statusbar with
+ *   amtk_application_window_connect_recent_chooser_menu_to_statusbar().
  *
- * The #GtkRecentChooserMenu is connected to the statusbar with
- * amtk_application_window_connect_recent_chooser_menu_to_statusbar().
- *
- * When the #GtkRecentChooser::item-activated signal is emitted,
- * g_application_open() is called (with an empty hint), so the #GApplication
- * must have the %G_APPLICATION_HANDLES_OPEN flag set.
+ * - When the #GtkRecentChooser::item-activated signal is emitted,
+ *   g_application_open() is called (with an empty hint), so the #GApplication
+ *   must have the %G_APPLICATION_HANDLES_OPEN flag set.
  *
  * Returns: (transfer floating): a new #GtkRecentChooserMenu.
  * Since: 3.0
@@ -566,24 +596,14 @@ GtkWidget *
 amtk_application_window_create_open_recent_menu (AmtkApplicationWindow *amtk_window)
 {
 	GtkRecentChooserMenu *recent_chooser_menu;
-	GtkRecentChooser *recent_chooser;
-	GtkRecentFilter *filter;
 
 	g_return_val_if_fail (AMTK_IS_APPLICATION_WINDOW (amtk_window), NULL);
 
-	recent_chooser_menu = GTK_RECENT_CHOOSER_MENU (gtk_recent_chooser_menu_new ());
-
-	recent_chooser = GTK_RECENT_CHOOSER (recent_chooser_menu);
-	gtk_recent_chooser_set_local_only (recent_chooser, FALSE);
-	gtk_recent_chooser_set_sort_type (recent_chooser, GTK_RECENT_SORT_MRU);
-
-	filter = gtk_recent_filter_new ();
-	gtk_recent_filter_add_application (filter, g_get_application_name ());
-	gtk_recent_chooser_set_filter (recent_chooser, filter);
+	recent_chooser_menu = amtk_application_window_create_open_recent_menu_base ();
 
 	amtk_application_window_connect_recent_chooser_menu_to_statusbar (amtk_window, recent_chooser_menu);
 
-	g_signal_connect_object (recent_chooser,
+	g_signal_connect_object (recent_chooser_menu,
 				 "item-activated",
 				 G_CALLBACK (open_recent_file_cb),
 				 amtk_window,
