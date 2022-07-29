@@ -73,7 +73,7 @@ amtk_lib = library(
   link_args: amtk_lib_link_args,
   link_depends: symbol_map,
   # link_whole is not supported with MSVC, so we use extract_all_objects().
-  objects: amtk_static_lib.extract_all_objects(),
+  objects: amtk_static_lib.extract_all_objects(recursive: false),
   version: AMTK_LT_VERSION,
   install: true
 )
