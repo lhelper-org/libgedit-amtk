@@ -1,3 +1,7 @@
+News in 5.6.1, 2022-11-17
+-------------------------
+* Revert unintentional soname bump, set 'soversion' back to 0.
+
 News in 5.6.0, 2022-11-02
 -------------------------
 * No changes.
