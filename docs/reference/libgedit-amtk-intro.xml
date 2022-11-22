@@ -7,13 +7,13 @@
  %gtkdocentities;
 ]>
 
-<refentry id="amtk-intro">
+<refentry id="libgedit-amtk-intro">
 <refmeta>
-  <refentrytitle>Amtk Introduction</refentrytitle>
+  <refentrytitle>libgedit-amtk Introduction</refentrytitle>
 </refmeta>
 
 <refnamediv>
-  <refname>Amtk Introduction</refname>
+  <refname>libgedit-amtk Introduction</refname>
   <refpurpose>
     Introduction to the Actions, Menus and Toolbars Kit for GTK applications.
   </refpurpose>
@@ -28,13 +28,13 @@
   applications that want to keep a traditional UI (with a
   <link linkend="GtkMenuBar">GtkMenuBar</link>, a
   <link linkend="GtkToolbar">GtkToolbar</link> and a
-  <link linkend="GtkStatusbar">GtkStatusbar</link>). Amtk is now suitable for
-  both a traditional UI and for a new UI with a
+  <link linkend="GtkStatusbar">GtkStatusbar</link>). libgedit-amtk is now
+  suitable for both a traditional UI and for a new UI with a
   <link linkend="GtkHeaderBar">GtkHeaderBar</link> and a “sandwich menu”.
 </para>
 
 <para>
-  With Amtk, menus, toolbars or other objects like
+  With libgedit-amtk, menus, toolbars or other objects like
   <link linkend="GtkShortcutsWindow">GtkShortcutsWindow</link> are created
   programmatically (not with a *.ui file), but with convenient APIs. The support
   for an XML format will maybe be added in the future.
@@ -42,7 +42,7 @@
 
 <para>
   Note that the heavy-lifting is still done by GTK of course (and GIO for
-  <link linkend="GAction">GAction</link>), this library is just a small layer on
+  <link linkend="GAction">GAction</link>). This library is just a small layer on
   top, providing an alternative way of doing things.
 </para>
 
@@ -69,7 +69,7 @@
     </listitem>
     <listitem>
       <para>
-        Amtk has been designed to be able to share
+        libgedit-amtk has been designed to be able to share
         <link linkend="AmtkActionInfo">AmtkActionInfo</link>'s in a library (with
         translations); this is a bit similar to
         <link linkend="GtkStockItem">GtkStockItem</link>, to reduce the amount of
@@ -90,7 +90,7 @@
         (see the class description of <link linkend="GtkApplicationWindow">GtkApplicationWindow</link>),
         the information in the XML file can be used only to create a <link linkend="GMenu">GMenu</link>,
         not a toolbar. It is not a good programming practice to duplicate the
-        information. With Amtk the information is encoded just once, in
+        information. With libgedit-amtk the information is encoded just once, in
         <link linkend="AmtkActionInfo">AmtkActionInfo</link>'s, and menu and
         toolbar items are created with <link linkend="AmtkFactory">AmtkFactory</link>
         which uses the information provided by the
@@ -100,8 +100,8 @@
     <listitem>
       <para>
         Something that is not possible to do with the support of
-        <link linkend="GMenu">GMenu</link> in GTK, that Amtk solves when using
-        <link linkend="GtkMenuItem">GtkMenuItem</link>'s: when a
+        <link linkend="GMenu">GMenu</link> in GTK, that libgedit-amtk solves
+        when using <link linkend="GtkMenuItem">GtkMenuItem</link>'s: when a
         <link linkend="GtkMenuItem">GtkMenuItem</link> is selected (e.g. when
         the mouse hovers it), showing a longer description in the
         <link linkend="GtkStatusbar">GtkStatusbar</link>. This is implemented by
@@ -124,9 +124,10 @@
 <refsect1>
   <title>Sanity checks</title>
   <para>
-    Amtk has several functions to do various sanity checks. They normally don't
-    impact too much the performances, so it is recommended to always run them,
-    although they could be disabled on production. The functions:
+    libgedit-amtk has several functions to do various sanity checks. They
+    normally don't impact too much the performances, so it is recommended to
+    always run them, although they could be disabled on production. The
+    functions:
   </para>
   <itemizedlist>
     <listitem>
@@ -155,19 +156,19 @@
 <refsect1>
   <title>GTK dependency</title>
   <para>
-    Amtk&nbsp;&package_api_version; depends on GTK&nbsp;3.
+    libgedit-amtk&nbsp;&package_api_version; depends on GTK&nbsp;3.
   </para>
 </refsect1>
 
 <refsect1>
   <title>pkg-config name</title>
   <para>
-    For Amtk&nbsp;&package_api_version;, the pkg-config name is:
+    For libgedit-amtk&nbsp;&package_api_version;, the pkg-config name is:
     <code>amtk-&package_api_version;</code>
   </para>
   <para>
-    To compile a program that uses Amtk&nbsp;&package_api_version;, you can for
-    example use the following command:
+    To compile a program that uses libgedit-amtk&nbsp;&package_api_version;, you
+    can for example use the following command:
   </para>
   <para>
     <code>$ gcc hello.c `pkg-config --cflags --libs amtk-&package_api_version;` -o hello</code>

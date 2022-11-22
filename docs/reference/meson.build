@@ -29,7 +29,7 @@ GNOME.gtkdoc(
     '--extra-dir=@0@'.format(gtk_docpath)
   ],
   content_files: [
-    'amtk-intro.xml',
+    'libgedit-amtk-intro.xml',
     'gradual-porting.xml',
   ],
   install: true

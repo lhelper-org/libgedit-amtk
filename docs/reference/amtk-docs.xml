@@ -8,15 +8,15 @@
 ]>
 <book id="index">
   <bookinfo>
-    <title>Amtk &package_api_version; Reference Manual</title>
+    <title>libgedit-amtk &package_api_version; Reference Manual</title>
     <releaseinfo>for &package_string;</releaseinfo>
   </bookinfo>
 
-  <xi:include href="amtk-intro.xml"/>
+  <xi:include href="libgedit-amtk-intro.xml"/>
   <xi:include href="gradual-porting.xml"/>
 
   <part id="api-reference">
-    <title>Amtk API Reference</title>
+    <title>libgedit-amtk API Reference</title>
     <xi:include href="xml/amtk-init.xml"/>
     <xi:include href="xml/amtk-application-window.xml"/>
     <xi:include href="xml/amtk-action-info.xml"/>

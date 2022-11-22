@@ -21,15 +21,15 @@
 </refnamediv>
 
 <para>
-  Even if you don't want to use Amtk in the end, Amtk can help to gradually move
-  away from <link linkend="GtkAction">GtkAction</link> and
+  Even if you don't want to use libgedit-amtk in the end, libgedit-amtk can help
+  to gradually move away from <link linkend="GtkAction">GtkAction</link> and
   <link linkend="GtkUIManager">GtkUIManager</link>.
 </para>
 
 <refsect1>
   <title>Moving gradually to <link linkend="GAction">GAction</link></title>
   <para>
-    Amtk provides the following functions that can help:
+    libgedit-amtk provides the following functions that can help:
   </para>
   <itemizedlist>
     <listitem>
