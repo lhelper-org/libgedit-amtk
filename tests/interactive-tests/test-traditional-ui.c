@@ -200,7 +200,7 @@ main (int    argc,
 
 	amtk_init ();
 
-	app = gtk_application_new ("org.gnome.amtk.test-traditional-ui", G_APPLICATION_FLAGS_NONE);
+	app = gtk_application_new ("org.gnome.amtk.test-traditional-ui", G_APPLICATION_DEFAULT_FLAGS);
 
 	g_signal_connect (app,
 			  "startup",
