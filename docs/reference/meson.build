@@ -1,9 +1,8 @@
 subdir('xml')
 
-configure_file(
-  input: 'amtk-sections.txt',
-  output: 'amtk-@0@-sections.txt'.format(AMTK_API_VERSION),
-  copy: true
+FS.copyfile(
+  'amtk-sections.txt',
+  'amtk-@0@-sections.txt'.format(AMTK_API_VERSION)
 )
 
 gtkdoc_module_name = 'amtk-@0@'.format(AMTK_API_VERSION)

@@ -5,7 +5,7 @@
 
 project(
   'amtk', 'c',
-  meson_version: '>= 0.53',
+  meson_version: '>= 0.64',
   version: '5.6.1',
   default_options: ['warning_level=2']
 )
@@ -13,6 +13,7 @@ project(
 GNOME = import('gnome')
 PKG_CONFIG = import('pkgconfig')
 I18N = import('i18n')
+FS = import('fs')
 
 # API version, used for parallel installability.
 AMTK_API_VERSION = '5'
