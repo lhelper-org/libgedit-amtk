@@ -1,10 +1,12 @@
 libgedit-amtk notes - possible things to do or to investigate
 =============================================================
 
-- When calling amtk_menu_item_set_icon_name(), do not have a large margin on
-  the left. GtkUIManager was able to put the icon without the large margin (in
-  the same column as the check or radio drawing). Maybe only GtkImageMenuItem
-  is able to do that, but is deprecated (and removed in GTK 4).
+- Use GtkImageMenuItem even if deprecated. Because when using
+  amtk_menu_item_set_icon_name(), there is a large margin on the left. The icon
+  should be placed in the same column as the check or radio drawings (when using
+  GtkCheckMenuItem and GtkRadioMenuItem).
+  By default GtkUIManager does the right thing (by using GtkImageMenuItem under
+  the hood, probably).
 
 - Add convenient API to replace a placeholder by a list of menu/toolbar items?
   And be able to update the placeholder content when the application runs (so
