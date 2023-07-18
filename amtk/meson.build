@@ -29,7 +29,7 @@ amtk_public_c_files = [
   'amtk-utils.c',
 ]
 
-headers_install_dir = get_option('includedir') / 'amtk-@0@/amtk/'.format(AMTK_API_VERSION)
+headers_install_dir = get_option('includedir') / '@0@-@1@/amtk/'.format(meson.project_name(), AMTK_API_VERSION)
 install_headers(
   amtk_public_headers,
   install_dir: headers_install_dir
@@ -45,7 +45,7 @@ amtk_enum_types = GNOME.mkenums_simple(
 )
 
 amtk_static_lib = static_library(
-  'amtk-static',
+  'libgedit-amtk-static',
   [amtk_public_c_files,
    amtk_enum_types],
   pic: true, # amtk_static_lib is potentially linked in a shared library.
@@ -68,7 +68,7 @@ amtk_lib_link_args = c_compiler.get_supported_link_arguments([
 ])
 
 amtk_lib = library(
-  'amtk-@0@'.format(AMTK_API_VERSION),
+  'gedit-amtk-@0@'.format(AMTK_API_VERSION),
   dependencies: AMTK_DEPS,
   link_args: amtk_lib_link_args,
   link_depends: symbol_map,
@@ -86,17 +86,17 @@ AMTK_LIB_DEP = declare_dependency(
 )
 
 PKG_CONFIG.generate(amtk_lib,
-  filebase: 'amtk-@0@'.format(AMTK_API_VERSION),
-  name: 'Amtk',
+  filebase: '@0@-@1@'.format(meson.project_name(), AMTK_API_VERSION),
+  name: meson.project_name(),
   description: 'Actions, Menus and Toolbars Kit',
-  subdirs: 'amtk-@0@'.format(AMTK_API_VERSION),
+  subdirs: '@0@-@1@'.format(meson.project_name(), AMTK_API_VERSION),
   libraries: AMTK_DEPS,
 )
 
 if get_option('gobject_introspection')
   GNOME.generate_gir(
     amtk_lib,
-    export_packages: 'amtk-@0@'.format(AMTK_API_VERSION),
+    export_packages: '@0@-@1@'.format(meson.project_name(), AMTK_API_VERSION),
     header: 'amtk/amtk.h',
     identifier_prefix: 'Amtk',
     include_directories: ROOT_INCLUDE_DIR,

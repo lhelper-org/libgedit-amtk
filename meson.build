@@ -4,7 +4,7 @@
 # See: https://github.com/mesonbuild/meson/issues/2607
 
 project(
-  'amtk', 'c',
+  'libgedit-amtk', 'c',
   meson_version: '>= 0.64',
   version: '5.6.1',
   default_options: ['warning_level=2']
@@ -26,7 +26,7 @@ AMTK_DEPS = [
 # amtk-config.h
 
 config_data = configuration_data()
-GETTEXT_PACKAGE_NAME = 'amtk-' + AMTK_API_VERSION
+GETTEXT_PACKAGE_NAME = '@0@-@1@'.format(meson.project_name(), AMTK_API_VERSION)
 config_data.set_quoted('GETTEXT_PACKAGE', GETTEXT_PACKAGE_NAME)
 config_data.set_quoted('AMTK_LOCALEDIR', get_option('prefix') / get_option('localedir'))
 

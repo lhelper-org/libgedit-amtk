@@ -1,5 +1,5 @@
 gtkdocentities_conf_data = configuration_data()
-gtkdocentities_conf_data.set('PACKAGE_STRING', 'Amtk @0@'.format(meson.project_version()))
+gtkdocentities_conf_data.set('PACKAGE_STRING', '@0@ @1@'.format(meson.project_name(), meson.project_version()))
 gtkdocentities_conf_data.set('PACKAGE_API_VERSION', AMTK_API_VERSION)
 
 gtkdocentities_filename = 'gtkdocentities.ent'
