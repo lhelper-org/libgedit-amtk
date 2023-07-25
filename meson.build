@@ -6,7 +6,7 @@
 project(
   'libgedit-amtk', 'c',
   meson_version: '>= 0.64',
-  version: '5.7.1',
+  version: '5.8.0',
   default_options: ['warning_level=2']
 )
 

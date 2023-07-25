@@ -1,3 +1,12 @@
+News in 5.8.0, 2023-07-28
+-------------------------
+* Rename the project: Amtk -> libgedit-amtk.
+  Hosted here: https://gedit-technology.net/
+  and https://github.com/gedit-technology/libgedit-amtk
+
+* A few code maintenance.
+* Docs: add note about GtkImageMenuItem.
+
 News in 5.6.1, 2022-11-17
 -------------------------
 * Revert unintentional soname bump, set 'soversion' back to 0.
